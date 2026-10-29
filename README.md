@@ -21,3 +21,22 @@ Music is read from `/data/music` by default. Set `MUSIC_DIR` to use another fold
 ```sh
 MUSIC_DIR=~/Music music-menu
 ```
+
+## Optional: media keys
+`mediakey` makes your keyboard's play/pause, next and previous keys control music-menu's mpv. If music-menu isn't playing, it falls back to `playerctl`, so the keys still work with other players.
+
+Extra requirement: playerctl.
+
+```sh
+cp mediakey ~/.local/bin/
+```
+
+Bind it in your hotkey daemon, like in sxhkd:
+```
+XF86AudioPlay
+    mediakey play-pause
+XF86AudioNext
+    mediakey next
+XF86AudioPrev
+    mediakey previous
+```
