@@ -1,11 +1,11 @@
-#!/usr/bin/env bash
+#!/bin/sh
 # media key handler: controls the music-menu mpv if it is running, else playerctl
 # usage: mediakey play-pause|next|previous
 
 SOCK="${XDG_RUNTIME_DIR:-/tmp}/music-mpv.sock"
 PIDFILE="${XDG_RUNTIME_DIR:-/tmp}/music-mpv.pid"
 
-if [ -S "$SOCK" ] && [ -f "$PIDFILE" ] && kill -0 "$(< "$PIDFILE")" 2>/dev/null; then
+if [ -S "$SOCK" ] && [ -f "$PIDFILE" ] && kill -0 "$(cat "$PIDFILE")" 2>/dev/null; then
     case "$1" in
         play-pause) cmd='["cycle","pause"]' ;;
         next)       cmd='["playlist-next"]' ;;

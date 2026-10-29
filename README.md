@@ -25,7 +25,7 @@ MUSIC_DIR=~/Music music-menu
 ## Optional: media keys
 `mediakey` makes your keyboard's play/pause, next and previous keys control music-menu's mpv. If music-menu isn't playing, it falls back to `playerctl`, so the keys still work with other players.
 
-Extra requirement: playerctl.
+Extra requirements: socat (already needed by music-menu) and playerctl.
 
 ```sh
 cp mediakey ~/.local/bin/
