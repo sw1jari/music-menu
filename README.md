@@ -15,7 +15,7 @@ cp now-playing.lua ~/.config/mpv/scripts-music/
 ```
 
 ## Usage
-Run `music-menu`, ideally from a keybinding. Folders end in `/`, and picking a folder shows its contents. "▶ Play whole album" plays everything below the current folder in order. While music is playing, the top menu also shows pause/resume, next, previous and stop.
+Run `music-menu`, ideally from a keybinding. Folders end in `/`, and picking a folder shows its contents. "▶ Play whole album" plays everything below the current folder in order. While music is playing, the top menu also shows pause/resume, next, previous and stop. If [spotify-menu](https://github.com/sw1jari/spotify-menu) is installed, "🎧 Spotify" opens it.
 
 Music is read from `/data/music` by default. Set `MUSIC_DIR` to use another folder:
 ```sh
