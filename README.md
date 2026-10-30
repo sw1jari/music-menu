@@ -1,25 +1,31 @@
 # music-menu
 
-A dmenu music picker. Browse your music folder, play a single track or a whole album with mpv in the background, and pause, skip or stop from the same menu.
-
-The current track is written to `$XDG_RUNTIME_DIR/music-now`, with the time into it and its length on a second line, so a status bar can show it (see [dwm-status](https://github.com/sw1jari/dwm-status)).
+A dmenu music picker. Browse your music folder and play a track or a whole album with mpv in the background.
 
 ## Demo
 
-The music library in these gifs is demo data.
+The music library below is demo data.
 
-Browsing to an album and playing a song:
+**Browsing and playing**
 
 ![browsing and playing](docs/music-menu-browse.gif)
 
-Pause, resume and next from the same menu while an album plays:
+**Playback controls**, pause, resume, next
 
 ![playback controls](docs/music-menu-controls.gif)
 
-## Requirements
-bash, dmenu, mpv, socat
+## Features
+
+- Browse folders, play a single track or everything below a folder
+- Pause, next, previous and stop from the same menu
+- Shows the current track and its time in your status bar, see [dwm-status](https://github.com/sw1jari/dwm-status)
+- Keyboard media keys through `mediakey`
+- Opens [spotify-menu](https://github.com/sw1jari/spotify-menu) when it's installed
 
 ## Install
+
+Needs bash, dmenu, mpv and socat.
+
 ```sh
 cp music-menu ~/.local/bin/
 mkdir -p ~/.config/mpv/scripts-music
@@ -27,23 +33,44 @@ cp now-playing.lua ~/.config/mpv/scripts-music/
 ```
 
 ## Usage
-Run `music-menu`, ideally from a keybinding. Folders end in `/`, and picking a folder shows its contents. "▶ Play whole album" plays everything below the current folder in order. While music is playing, the top menu also shows pause/resume, next, previous and stop. If [spotify-menu](https://github.com/sw1jari/spotify-menu) is installed, "🎧 Spotify" opens it.
 
-Music is read from `/data/music` by default. Set `MUSIC_DIR` to use another folder:
+Run `music-menu`, ideally from a keybinding.
+
+| Entry | What it does |
+|---|---|
+| `folder/` | open the folder |
+| ▶ Play whole album | play everything below this folder in order |
+| a track | play just that track |
+| ⏯ ⏭ ⏮ ⏹ | pause/resume, next, previous, stop (while playing) |
+| 🎧 Spotify | open spotify-menu |
+
+Music is read from `/data/music`. Set `MUSIC_DIR` for another folder:
+
 ```sh
 MUSIC_DIR=~/Music music-menu
 ```
 
-## Optional: media keys
-`mediakey` makes your keyboard's play/pause, next and previous keys control music-menu's mpv. If music-menu isn't playing, it falls back to `playerctl`, so the keys still work with other players.
+## Status bar
 
-Extra requirements: socat (already needed by music-menu) and playerctl.
+`now-playing.lua` writes `$XDG_RUNTIME_DIR/music-now`, updated every second:
+
+```
+♪ Daft Punk - Digital Love [3/5]
+1:23/5:01
+```
+
+The first line is the icon (♪ or ⏸), the track and its place in the album. The second is the time into it and its length.
+
+## Media keys
+
+`mediakey` controls music-menu's mpv while it plays, and falls back to `playerctl` for other players. It also needs playerctl.
 
 ```sh
 cp mediakey ~/.local/bin/
 ```
 
-Bind it in your hotkey daemon, like in sxhkd:
+Bind it in your hotkey daemon, like sxhkd:
+
 ```
 XF86AudioPlay
     mediakey play-pause
