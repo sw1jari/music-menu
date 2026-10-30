@@ -16,11 +16,11 @@ The music library below is demo data.
 
 ## Features
 
-- Browse folders, play a single track or everything below a folder
-- Pause, next, previous and stop from the same menu
-- Shows the current track and its time in your status bar, see [dwm-status](https://github.com/sw1jari/dwm-status)
-- Keyboard media keys through `mediakey`
-- Opens [spotify-menu](https://github.com/sw1jari/spotify-menu) when it's installed
+- Browse folders, and play a single track or everything below a folder.
+- Pause, next, previous and stop from the same menu.
+- Shows the current track and its time in your status bar, see [dwm-status](https://github.com/sw1jari/dwm-status).
+- Keyboard media keys through `mediakey`.
+- Opens [spotify-menu](https://github.com/sw1jari/spotify-menu) when it's installed.
 
 ## Install
 
@@ -38,11 +38,11 @@ Run `music-menu`, ideally from a keybinding.
 
 | Entry | What it does |
 |---|---|
-| `folder/` | open the folder |
-| ▶ Play whole album | play everything below this folder in order |
-| a track | play just that track |
-| ⏯ ⏭ ⏮ ⏹ | pause/resume, next, previous, stop (while playing) |
-| 🎧 Spotify | open spotify-menu |
+| `folder/` | Opens the folder |
+| ▶ Play whole album | Plays everything below this folder in order |
+| A track | Plays just that track |
+| ⏯ ⏭ ⏮ ⏹ | Pause/resume, next, previous, stop (while playing) |
+| 🎧 Spotify | Opens [spotify-menu](https://github.com/sw1jari/spotify-menu) |
 
 Music is read from `/data/music`. Set `MUSIC_DIR` for another folder:
 
@@ -59,7 +59,7 @@ MUSIC_DIR=~/Music music-menu
 1:23/5:01
 ```
 
-The first line is the icon (♪ or ⏸), the track and its place in the album. The second is the time into it and its length.
+The first line has the icon (♪ or ⏸), the track and its place in the album. The second has the time into the track and its length.
 
 ## Media keys
 
