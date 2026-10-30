@@ -2,7 +2,19 @@
 
 A dmenu music picker. Browse your music folder, play a single track or a whole album with mpv in the background, and pause, skip or stop from the same menu.
 
-The current track is written to `$XDG_RUNTIME_DIR/music-now`, so a status bar can show it (see [dwm-status](https://github.com/sw1jari/dwm-status)).
+The current track is written to `$XDG_RUNTIME_DIR/music-now`, with the time into it and its length on a second line, so a status bar can show it (see [dwm-status](https://github.com/sw1jari/dwm-status)).
+
+## Demo
+
+The music library in these gifs is demo data.
+
+Browsing to an album and playing a song:
+
+![browsing and playing](docs/music-menu-browse.gif)
+
+Pause, resume and next from the same menu while an album plays:
+
+![playback controls](docs/music-menu-controls.gif)
 
 ## Requirements
 bash, dmenu, mpv, socat
