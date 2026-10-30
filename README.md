@@ -32,6 +32,8 @@ mkdir -p ~/.config/mpv/scripts-music
 cp now-playing.lua ~/.config/mpv/scripts-music/
 ```
 
+The Lua script is also found in `/usr/share/music-menu/`, where a package puts it.
+
 ## Usage
 
 Run `music-menu`, ideally from a keybinding.
@@ -79,3 +81,7 @@ XF86AudioNext
 XF86AudioPrev
     mediakey previous
 ```
+
+## License
+
+MIT

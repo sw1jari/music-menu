@@ -7,7 +7,9 @@ RUN="${XDG_RUNTIME_DIR:-/tmp}"
 SOCK="$RUN/music-mpv.sock"
 PIDFILE="$RUN/music-mpv.pid"
 NOW="$RUN/music-now"
+# your own copy first, else the one a package installed
 LUA="$HOME/.config/mpv/scripts-music/now-playing.lua"
+[ -r "$LUA" ] || LUA=/usr/share/music-menu/now-playing.lua
 EXT='mp3|m4a|flac|ogg|opus|wav|aac|wma|mp4|mkv|webm'
 
 PLAY_ALL="▶ Play whole album"
